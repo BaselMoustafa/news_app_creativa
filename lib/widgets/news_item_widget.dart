@@ -52,11 +52,15 @@ class NewsItemWidget extends StatelessWidget {
               children: [
                 Text(
                   item.title,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                   style: AppTextStyles.bold24,
                 ),
                 
                 Text(
                   item.describtion,
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
                   style: AppTextStyles.regular18.copyWith(
                     color: AppColors.grey
                   ),

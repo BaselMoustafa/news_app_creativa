@@ -15,7 +15,7 @@ class IconWithTextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-
+      crossAxisAlignment: CrossAxisAlignment.start,
       spacing: 10,
       children: [
         Icon(
@@ -23,10 +23,12 @@ class IconWithTextWidget extends StatelessWidget {
           color: AppColors.grey,
         ),
 
-        Text(
-          text,
-          style: AppTextStyles.regular14.copyWith(
-            color: AppColors.grey
+        Expanded(
+          child: Text(
+            text,
+            style: AppTextStyles.regular14.copyWith(
+              color: AppColors.grey
+            ),
           ),
         )
       ],

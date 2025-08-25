@@ -21,9 +21,9 @@ class HomeScreen extends StatelessWidget {
             NewsItemWidget(
               item: NewsItem(
                 sourceName: "CNN",
-                title: 'Title',
-                describtion: 'Description',
-                author: "Basel Moustafa",
+                title: 'Title Title Title Title Title Title Title Title Title Title Title Title Title Title ',
+                describtion: "DescribtionDescribtionDescribtionDescribtionDescribtionDescribtionDescribtionDescribtionDescribtionDescribtionDescribtionDescribtionDescribtionDescribtionDescribtionDescribtionDescribtionDescribtionDescribtion",
+                author: "Basel MoustafaBasel MoustafaBasel MoustafaBasel MoustafaBasel MoustafaBasel MoustafaBasel Moustafa",
                 date: DateTime(2023, 1, 1),
                 imageUrl: 'https://media.istockphoto.com/id/2165610948/vector/idea-thinking-out-of-the-box-creativity-and-design-concept-background-banner-poster.jpg?s=2048x2048&w=is&k=20&c=HOl3EUPYM2o8a743ez3EsF793jWEYBvI3yKX48klkHk=',
                 url: 'https://www.istockphoto.com/vector/idea-thinking-out-of-the-box-creativity-and-design-concept-background-banner-poster-gm2165610948-585794664?searchscope=image%2Cfilm',
