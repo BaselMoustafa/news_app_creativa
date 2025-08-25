@@ -5,6 +5,7 @@ class NewsItem {
   final String imageUrl;
   final String author;
   final DateTime date;
+  final String sourceName;
 
   const NewsItem({
     required this.title,
@@ -12,6 +13,7 @@ class NewsItem {
     required this.url,
     required this.imageUrl,
     required this.author,
-    required this.date
+    required this.date,
+    required this.sourceName
   });
 }
