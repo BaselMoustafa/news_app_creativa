@@ -28,6 +28,6 @@ class ApplyFilterButton extends StatelessWidget {
   }
 
   void _onTap() {
-      
+      print("Apply filters");
     }
 }
