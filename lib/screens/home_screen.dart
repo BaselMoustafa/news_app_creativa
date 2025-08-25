@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/models/news_item.dart';
+import 'package:news_app/screens/news_filter_screen.dart';
 import 'package:news_app/styles/app_colors.dart';
 import 'package:news_app/widgets/news_list_view.dart';
 import 'package:news_app/widgets/search_bar_widget.dart';
@@ -27,7 +28,13 @@ class HomeScreen extends StatelessWidget {
 
                 IconButton(
                   onPressed: () {
-                    print("Will Filter News");
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return const NewsFilterScreen();
+                        },
+                      )
+                    );
                   },
                   icon: Icon(
                     Icons.filter_list,
