@@ -12,8 +12,13 @@ class NewsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (news.isEmpty) {
+      return Text("Not News Found");
+    }
     return ListView.separated(
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.symmetric(
+        vertical: 10
+      ),
       itemCount: news.length,
       separatorBuilder: (context, index) => SizedBox(
         height: 15,
