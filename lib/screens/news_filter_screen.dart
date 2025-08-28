@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:news_app/cubit/get_news_cubit.dart';
+import 'package:news_app/models/country.dart';
 import 'package:news_app/styles/app_text_styles.dart';
 import 'package:news_app/widgets/apply_filter_button.dart';
 import 'package:news_app/widgets/category_selector_wigdet.dart';
 import 'package:news_app/widgets/country_selector_widget.dart';
 
-class NewsFilterScreen extends StatelessWidget {
+class NewsFilterScreen extends StatefulWidget {
   const NewsFilterScreen({super.key});
+
+  @override
+  State<NewsFilterScreen> createState() => NewsFilterScreenState();
+}
+
+class NewsFilterScreenState extends State<NewsFilterScreen> {
+  late Country selectedCountry = context.read<GetNewsCubit>().selectedCountry;
+
+  late String? selectedCategory = context.read<GetNewsCubit>().selectedCategory;
+
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +39,7 @@ class NewsFilterScreen extends StatelessWidget {
             CountrySelectorWidget(
               initialCountry:null,
               onChnaged: (country){
-                print("Country changed to $country");
+                selectedCountry= country;
               },
             ),
         
@@ -36,16 +49,19 @@ class NewsFilterScreen extends StatelessWidget {
               "Select Category",
               style: AppTextStyles.bold18,
             ),
+
             CategorySelectorWidget(
               initialCategory:null,
               onChnaged: (category){
-                print("Category changed to $category");
+                selectedCategory = category; 
               },
             ),
 
             Spacer(),
 
-            ApplyFilterButton(),
+            ApplyFilterButton(
+              screenState: this,
+            ),
 
             SizedBox(height: 20,)
           ],
