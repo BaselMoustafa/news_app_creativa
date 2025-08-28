@@ -16,4 +16,16 @@ class NewsItem {
     required this.date,
     required this.sourceName
   });
+
+  factory NewsItem.fromMap(Map<String, dynamic> map) {
+    return NewsItem(
+      title: map["title"],
+      describtion: map["description"],
+      url: map["url"],
+      imageUrl: map["urlToImage"],
+      author: map["author"],
+      date: DateTime.parse(map["publishedAt"]),
+      sourceName: map["source"]["name"],
+    );
+  }
 }

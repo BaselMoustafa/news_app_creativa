@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/models/news_item.dart';
 import 'package:news_app/screens/news_filter_screen.dart';
 import 'package:news_app/styles/app_colors.dart';
-import 'package:news_app/widgets/news_list_view.dart';
+import 'package:news_app/widgets/get_news_bloc_builder.dart';
 import 'package:news_app/widgets/search_bar_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -45,14 +44,7 @@ class HomeScreen extends StatelessWidget {
             ),
 
             Expanded(
-              child: NewsListView(
-                news: [
-                  NewsItem(
-                    title: "Title", 
-                    describtion: "Description", 
-                    url: "", imageUrl: "https://media.istockphoto.com/id/2165610948/vector/idea-thinking-out-of-the-box-creativity-and-design-concept-background-banner-poster.jpg?s=2048x2048&w=is&k=20&c=HOl3EUPYM2o8a743ez3EsF793jWEYBvI3yKX48klkHk=", author: "author", date: DateTime.now(), sourceName: "dsadasd")
-                ],
-              ),
+              child: GetNewsBlocBuilder(),
             )
           ],
         ),
