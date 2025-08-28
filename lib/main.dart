@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       home: BlocProvider(
         create: (context) => GetNewsCubit(
           newsService: NewsService(dio: Dio())
-        ),
+        )..getNews(),
         child: HomeScreen(),
       ),
     );

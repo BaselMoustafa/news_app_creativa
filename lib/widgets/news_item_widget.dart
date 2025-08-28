@@ -31,6 +31,14 @@ class NewsItemWidget extends StatelessWidget {
                   item.imageUrl,
                   fit: BoxFit.cover,
                   width: double.infinity,
+                  errorBuilder: (context, error, stackTrace) {
+                    return Center(
+                      child: Icon(
+                        Icons.image_outlined,
+                        size: 100,
+                      ),
+                    );
+                  },
                 ),
 
                 PositionedDirectional(
@@ -58,7 +66,7 @@ class NewsItemWidget extends StatelessWidget {
                 ),
                 
                 Text(
-                  item.describtion,
+                  item.describtion??"",
                   maxLines: 3,
                   overflow: TextOverflow.ellipsis,
                   style: AppTextStyles.regular18.copyWith(
@@ -68,7 +76,7 @@ class NewsItemWidget extends StatelessWidget {
                 
                 IconWithTextWidget(
                   iconData:Icons.person , 
-                  text: "By ${item.author}",
+                  text: "By ${item.author??"Unknown"}",
                 ),
                 
                 IconWithTextWidget(
