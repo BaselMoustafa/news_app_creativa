@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/cubit/get_news_cubit.dart';
@@ -37,7 +38,7 @@ class NewsFilterScreenState extends State<NewsFilterScreen> {
               style: AppTextStyles.bold18,
             ),
             CountrySelectorWidget(
-              initialCountry:null,
+              initialCountry:selectedCountry,
               onChnaged: (country){
                 selectedCountry= country;
               },
@@ -51,7 +52,7 @@ class NewsFilterScreenState extends State<NewsFilterScreen> {
             ),
 
             CategorySelectorWidget(
-              initialCategory:null,
+              initialCategory:selectedCategory,
               onChnaged: (category){
                 selectedCategory = category; 
               },

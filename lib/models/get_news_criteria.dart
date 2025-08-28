@@ -19,7 +19,7 @@ class GetNewsCriteria {
     var toReturn = {
       "apiKey" : Constants.apiKey,
       "country": country.code,
-      "category":category,
+      "category":category?.toLowerCase(),
       "q":searchTerm,
     };
     log(toReturn.toString());
