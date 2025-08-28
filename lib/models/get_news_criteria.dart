@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:news_app/constants.dart';
 import 'package:news_app/models/country.dart';
 
@@ -14,11 +16,13 @@ class GetNewsCriteria {
   });
 
   Map<String,dynamic> get toQueryParameters {
-    return {
+    var toReturn = {
       "apiKey" : Constants.apiKey,
       "country": country.code,
       "category":category,
       "q":searchTerm,
     };
+    log(toReturn.toString());
+    return toReturn;
   }
 }
